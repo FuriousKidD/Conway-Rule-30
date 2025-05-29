@@ -1,0 +1,2 @@
+# Conway-Rule-30
+
