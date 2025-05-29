@@ -14,6 +14,7 @@ int main(int argc, char* argv[])
     // validates command line arguments
     if(argc != 2){
         cerr << "Invalid number of arguments! \n";
+		cout << "[program.exe numCells]"
         exit(INVALID_ARGUMENTS);
     }//end of if
 
