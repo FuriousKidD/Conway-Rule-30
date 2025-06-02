@@ -25,15 +25,15 @@ namespace cellSpace{
 		return intRand;
 	}// end of GenRand
 
-	oneD arrDefault(int* arrCurrent, int intSize, int intMiddle){
-	    arrCurrent = new int[intSize];
+	oneD arrDefault(char* arrCurrent, int intSize, int intMiddle){
+	    arrCurrent = new char[intSize];
 
 	     for(int i = 0; i < intSize; i++){
-            arrCurrent[i] = 0;
+            arrCurrent[i] = '.';
 
             //puts alive in the middle of the cell
             if(i == intMiddle){
-                arrCurrent[i] = 1;
+                arrCurrent[i] = '^';
             }//end of if
 
         }//end of for loop
@@ -42,14 +42,20 @@ namespace cellSpace{
 
 	oneD initialArray(oneD arrCurrent, int intSize, char chOption){
 
-		arrCurrent = new int [intSize];
+		arrCurrent = new char [intSize];
 
 		//if user chooses option A then random numbers must be populated into the array
 		if(toupper(chOption) == 'A'){
 
 			for(int i = 0; i < intSize; i++){
 				int intRand = genRand();
-				arrCurrent[i] = intRand;
+				if(intRand){
+					arrCurrent[i] = '.';
+				}
+				else{
+					arrCurrent[i] = '^';
+				}
+				
 			}//end of if
 			cout << "\nInitial Round: Random population successful!";
 
@@ -65,7 +71,7 @@ namespace cellSpace{
 
 				//Checks if user put the correct values between 1 and 0
                 //if user enters anything that is not an integer 0 or 1, they must try again.
-				while(cin.fail() || ( arrCurrent[i] != 1 && arrCurrent[i] != 0 )){
+				while(cin.fail() || ( arrCurrent[i] != '^' && arrCurrent[i] != '.' )){
 				    cin.clear();
 				    cin.ignore(numeric_limits<streamsize>::max(),'\n');
 				    cerr << "Invalid Input! Enter Cell (1 or 0): ";
@@ -85,13 +91,13 @@ namespace cellSpace{
 
 	}//end of initialArray
 
-	void ruleThirty(oneD& arrNext, int*& arrCurrent, int& intSize){
-		arrNext = new int[intSize];
-		oneD arrTemp = new int[intSize];
+	void ruleThirty(oneD& arrNext, char*& arrCurrent, int& intSize){
+		arrNext = new char[intSize];
+		oneD arrTemp = new char[intSize];
 
 		//The following initializes the arrNext with default 0
 		for(int i = 0; i < intSize; i++){
-			arrNext[i] = 0;
+			arrNext[i] = '.';
 		}//end of for loop
 
 		for (int i = 0; i < intSize; i++){//temp array to hold current values
@@ -106,30 +112,30 @@ namespace cellSpace{
 			//The following conditional checks for cells that are out of bounds
 			//Assigns the left neighbour of the first cell to 0
 			if((i-1) == -1){
-				strPattern += "0";
-				strPattern += to_string(arrTemp[i]);
-				strPattern += to_string(arrTemp[i+1]);
+				strPattern += ".";
+				strPattern += (arrTemp[i]);
+				strPattern += (arrTemp[i+1]);
 			}// end of if
 
 			//Assigns the right neighbour of the last cell to 0
 			else if ((i+1) == intSize){
 
-			strPattern += to_string(arrTemp[i-1]);
-			strPattern += to_string(arrTemp[i]);
-			strPattern += "0";
+			strPattern += (arrTemp[i-1]);
+			strPattern += (arrTemp[i]);
+			strPattern += ".";
 
 			}//end of else if
 
-			strPattern += to_string(arrTemp[i-1]);
-			strPattern += to_string(arrTemp[i]);
-			strPattern += to_string(arrTemp[i+1]);
+			strPattern += (arrTemp[i-1]);
+			strPattern += (arrTemp[i]);
+			strPattern += (arrTemp[i+1]);
 
-			if(strPattern == "111" || strPattern == "110" || strPattern == "101" || strPattern == "000"){
+			if(strPattern == "^^^" || strPattern == "^^." || strPattern == "^.^" || strPattern == "..."){
 				arrNext[i] = DEAD;
 			}//end of end if
 
 			//Checks if the pattern of a cell and
-			else if(strPattern == "100" || strPattern == "011" || strPattern == "010" || strPattern == "001"){
+			else if(strPattern == "^.." || strPattern == ".^^" || strPattern == ".^." || strPattern == "..^"){
 				arrNext[i] = ALIVE;
 			}//end of else if
 

@@ -5,8 +5,8 @@
 //const variable declaration
 const int INVALID_ARGUMENTS = 1; // for command-line arguments
 const int EXIT_PROGRAM = 2;
-const int ALIVE = 1;
-const int DEAD = 0;
+const char ALIVE = '^';
+const char DEAD = '.';
 
 //below constant global variables are used for the function used for generating random numbers between 0 and 1
 const int RANGE = 1;
@@ -15,7 +15,7 @@ const int MAX = 1;
 
 namespace cellSpace{
 
-    typedef int* oneD;
+    typedef char* oneD;
 
     //Clears the screen whenever it's called
 	void screenClear();

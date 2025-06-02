@@ -20,8 +20,8 @@ int main(int argc, char* argv[])
 
     //following is the dynamic array initialisation
     int intSize = stoi(argv[1]);	// function stoi converts string into an integer
-    oneD arrCurrent = new int[intSize];
-	oneD arrNext = new int[intSize];
+    oneD arrCurrent = new char[intSize];
+	oneD arrNext = new char[intSize];
 
     //variables to use in main
     int intRounds = intSize;
