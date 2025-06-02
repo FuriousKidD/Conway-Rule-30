@@ -6,14 +6,9 @@ This project implements the Rule 30 elementary cellular automaton in C++. It sim
 
 ## Demo Screenshots
 
-![Initial state with random initialization](./screenshots/initial_state.png)  
-*Initial random configuration of cells*
-
-![Evolution after several rounds](./screenshots/evolution_rounds.png)  
-*Automaton evolution after multiple rounds*
-
-![Manual initialization screen](./screenshots/manual_init.png)  
-*Manual setup of initial cell states*
+| Menu | Initial cells | random config |
+|------------|------------------------|------------------------|
+| <img width="523" alt="Menu system" src="https://github.com/user-attachments/assets/4a160c53-4ff6-44c6-8fb7-efe9f16009b8" /> | <img width="542" alt="Default" src="https://github.com/user-attachments/assets/509395d4-dda1-4b74-b284-89d586d624af" /> | <img width="575" alt="Example2-RandomSelection" src="https://github.com/user-attachments/assets/f7d7cd99-edb2-44db-8d43-b63eacc8d717" /> |
 
 ---
 
