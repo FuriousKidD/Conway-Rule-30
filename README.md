@@ -3,12 +3,17 @@
 This project implements the Rule 30 elementary cellular automaton in C++. It simulates the evolution of a one-dimensional array of cells, each of which can be either alive or dead, over a specified number of rounds. The program provides a menu-driven interface allowing users to configure the automaton, initialize the cells, and observe their evolution.
 
 ---
+# Rule set
+The following is a wikipedia explanation of the rule 30.
+<img width="758" alt="Rule-set" src="https://github.com/user-attachments/assets/7c97edcf-d0ab-4c5c-990f-6907d7387b25" />
+
+---
 
 ## Demo Screenshots
 
 | Menu | Initial cells | random config |
 |------------|------------------------|------------------------|
-| <img width="523" alt="Menu system" src="https://github.com/user-attachments/assets/4a160c53-4ff6-44c6-8fb7-efe9f16009b8" /> | <img width="542" alt="Default" src="https://github.com/user-attachments/assets/509395d4-dda1-4b74-b284-89d586d624af" /> | <img width="575" alt="Example2-RandomSelection" src="https://github.com/user-attachments/assets/f7d7cd99-edb2-44db-8d43-b63eacc8d717" /> |
+| <img width="523" alt="Menu system" src="https://github.com/user-attachments/assets/4a160c53-4ff6-44c6-8fb7-efe9f16009b8" /> | <img width="505" alt="Example1-Defualt" src="https://github.com/user-attachments/assets/8a2de9fd-669e-43c2-9cc0-5256a1399422" /> | <img width="554" alt="Example2-RandomSelection" src="https://github.com/user-attachments/assets/2fbfb0aa-e34c-4d05-ae84-d82798794ccc" /> |
 
 ---
 
